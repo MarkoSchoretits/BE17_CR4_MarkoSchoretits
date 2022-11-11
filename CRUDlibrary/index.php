@@ -14,7 +14,7 @@ if(mysqli_num_rows($result)  > 0) {
             <td>" .$row['item_type']."</td>
             <td>" .$row['author_first_name']."</td>
             <td>" .$row['author_last_name']."</td>
-            <td>" .$row['publisher_name']."</td>
+            <td><a href='publisher.php?id=" .$row['id']."'>" .$row['publisher_name']."</a></td>
             <td>" .$row['publisher_address']."</td>
             <td>" .$row['publish_date']."</td>
             <td>" .$row['available']."</td>
@@ -73,8 +73,8 @@ mysqli_close($connect);
                         <th>Author 1st Name</th>
                         <th>Author 2nd Name</th>
                         <th>Publisher</th>
-                        <th>Publ Address</th>
-                        <th>Publ Date</th>
+                        <th>Publisher Address</th>
+                        <th>Publication Date</th>
                         <th>avlb</th>
                         <th>Action&nbsp;/&nbsp;Data&nbsp;Manipulation</th>
                     </tr>
