@@ -18,8 +18,11 @@ if(mysqli_num_rows($result)  > 0) {
             <td>" .$row['publisher_address']."</td>
             <td>" .$row['publish_date']."</td>
             <td>" .$row['available']."</td>
-            <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
-            <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
+            <td>
+            <a href='details.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Details</button></a>
+            <a href='update.php?id=" .$row['id']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+            <a href='delete.php?id=" .$row['id']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a>
+            </td>
             </tr>";
     };
 } else {
@@ -73,7 +76,7 @@ mysqli_close($connect);
                         <th>Publ Address</th>
                         <th>Publ Date</th>
                         <th>avlb</th>
-                        <th>Action</th>
+                        <th>Action&nbsp;/&nbsp;Data&nbsp;Manipulation</th>
                     </tr>
                 </thead>
                 <tbody>
