@@ -12,33 +12,33 @@ function file_upload($picture) {
     $fileExtension = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));    
     $filesAllowed = ["png", "jpg", "jpeg"];
     if ($fileError == 4) {       
-        $result->ErrorMessage = "No picture was chosen. It can always be updated later.";
+        $result->ErrorMessage = "No picture has been chosen. It can be updated later.";
         return $result;
     } else {
         if (in_array($fileExtension, $filesAllowed)) {
             if ($fileError === 0) {
-                if ($fileSize < 500000) { //500kb this number is in bytes
+                if ($fileSize < 524288) { //500KB this number is in bytes
                     //it gives a file name based microseconds
-                    $fileNewName = uniqid('') . "." . $fileExtension; // 1233343434.jpg i.e
+                    $fileNewName = uniqid('') . "." . $fileExtension; // 1233343434.jpg e.g
                     $destination = "../pictures/$fileNewName";
                     if (move_uploaded_file($fileTmpName, $destination)) {
                         $result->error = 0;
                         $result->fileName = $fileNewName;
                         return $result;
                     } else {    
-                        $result->ErrorMessage = "There was an error uploading this file.";
+                        $result->ErrorMessage = "There has been an error uploading this file.";
                         return $result;
                     }
                 } else {                                      
-                    $result->ErrorMessage = "This picture is bigger than the allowed 500Kb. <br> Please choose a smaller one and update the product.";
+                    $result->ErrorMessage = "This picture is bigger than the allowed 500KB. <br> Please choose a smaller one and update the item.";
                     return $result;
                 }
             } else {                              
-                $result->ErrorMessage = "There was an error uploading - $fileError code. Check the PHP documentation.";
+                $result->ErrorMessage = "There has been an error uploading - $fileError code. Check the PHP documentation.";
                 return $result;
             }
         } else {                      
-            $result->ErrorMessage = "This file type can't be uploaded.";
+            $result->ErrorMessage = "This file type cannot be uploaded.";
             return $result;
         }
     }
