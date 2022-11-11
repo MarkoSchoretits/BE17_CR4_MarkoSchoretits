@@ -52,7 +52,11 @@ if ($_GET['id']) {
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
                 <tr>
-                    <td><?php echo $title?></td>
+                <td><?php echo $title?></td>
+                <td><?php echo $isbn?></td>
+                <td><?php echo $author_first_name?></td>
+                <td><?php echo $author_last_name?></td>
+                <td><?php echo $short_description?></td>
                 </tr>
             </table>
 
