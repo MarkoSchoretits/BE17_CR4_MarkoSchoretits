@@ -7,6 +7,7 @@ $dbname = "be17_cr4_markoschoretits_biglibrary";
 
 // create connection
 $connect = mysqli_connect($localhost, $username, $password, $dbname);
+
 // check connection
 if (!$connect) {
     die("Connection failed: " . mysqli_connect_error());

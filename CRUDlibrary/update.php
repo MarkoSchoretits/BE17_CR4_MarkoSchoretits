@@ -1,11 +1,16 @@
+<!-- PHP -->
 <?php
+
 require_once 'actions/db_connect.php';
 
 if ($_GET['id']) {
+
     $id = $_GET['id'];
     $sql = "SELECT * FROM item WHERE id = {$id}";
     $result = mysqli_query($connect, $sql);
+
     if (mysqli_num_rows($result) == 1) {
+
         $data = mysqli_fetch_assoc($result);
         $title = $data['title'];
         $isbn = $data['isbn'];
@@ -18,20 +23,31 @@ if ($_GET['id']) {
         $publish_date = $data['publish_date'];
         $available = $data['available'];
         $picture = $data['picture'];
+
     } else {
         header("location: error.php");
     }
+
     mysqli_close($connect);
+
 } else {
     header("location: error.php");
 }
 ?>
+<!-- /php -->
 
+<!-- HTML -->
 <!DOCTYPE html>
 <html>
+
+    <!-- HEAD -->
     <head>
+
         <title>Edit Item</title>
+
         <?php require_once 'components/boot.php'?>
+
+        <!-- CSS -->
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -43,11 +59,19 @@ if ($_GET['id']) {
                 height: 70px !important;
             }     
         </style>
+        <!-- /css -->
+
     </head>
+    <!-- /head -->
+
+    <!-- BODY -->
     <body>
         <fieldset>
+
             <legend class='h2'>Updating request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $title ?>"></legend>
+
             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
+
                 <table class="table">
                     <tr>
                         <th>Title</th>
@@ -100,7 +124,12 @@ if ($_GET['id']) {
                         <td><a href= "index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                     </tr>
                 </table>
+
             </form>
+
         </fieldset>
     </body>
+    <!-- /body -->
+
 </html>
+<!-- /html -->

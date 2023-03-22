@@ -1,9 +1,11 @@
+<!-- PHP -->
 <?php 
 require_once 'actions/db_connect.php';
 
 $sql = "SELECT * FROM item";
 $result = mysqli_query($connect ,$sql);
 $tbody=''; //this variable will hold the body for the table
+
 if(mysqli_num_rows($result)  > 0) {     
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){         
         $tbody .= "<tr>
@@ -31,14 +33,20 @@ if(mysqli_num_rows($result)  > 0) {
 
 mysqli_close($connect);
 ?>
+<!-- /php -->
 
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
+
+    <!-- HEAD -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PHP CRUDlibrary</title>
         <?php require_once 'components/boot.php'?>
+
+        <!-- CSS -->
         <style type="text/css">
             .manageProduct {           
                 margin: auto;
@@ -55,14 +63,25 @@ mysqli_close($connect);
                 text-align: center;
             }
         </style>
+
     </head>
+    <!-- /head -->
+
+    <!-- BODY -->
     <body>
-        <div class="manageProduct w-75 mt-3">    
+
+        <!-- CONTAINER -->
+        <div class="manageProduct w-75 mt-3">
+
             <div class='mb-3'>
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add item</button></a>
             </div>
+
             <p class='h2'>Items in our Library</p>
+
+            <!-- Table -->
             <table class='table table-striped'>
+
                 <thead class='table-success'>
                     <tr>
                         <th>Picture</th>
@@ -79,10 +98,18 @@ mysqli_close($connect);
                         <th>Action&nbsp;/&nbsp;Data&nbsp;Manipulation</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <?= $tbody;?>
                 </tbody>
+
             </table>
+
         </div>
+        <!-- /container -->
+
     </body>
+    <!-- /body -->
+
 </html>
+<!-- /html -->

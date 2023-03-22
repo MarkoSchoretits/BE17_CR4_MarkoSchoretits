@@ -1,11 +1,24 @@
+<!-- Doctype -->
 <!DOCTYPE html>
+
+
+<!-- HTML -->
 <html lang="en">
+
+    <!-- HEAD -->
     <head>
         <meta charset="UTF-8">
+
         <title>Error</title>
-        <?php require_once 'components/boot.php'?>    
+
+        <?php require_once 'components/boot.php'?>
+
     </head>
+    <!-- /head -->
+
+    <!-- BODY -->
     <body>
+
         <div class="container">  
             <div class="mt-3 mb-3">
                 <h1>Invalid Request</h1>
@@ -14,5 +27,9 @@
                 <p>You have made an invalid request. Please <a href="index.php" class="alert-link">go back</a> to index and try again.</p>
             </div>
         </div>
+
     </body>
+    <!-- /body -->
+
 </html>
+<!-- /html -->

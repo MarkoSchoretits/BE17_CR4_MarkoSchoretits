@@ -27,11 +27,18 @@ if ($_GET['id']) {
 }
 ?>
 
+<!-- HTML -->
 <!DOCTYPE html>
 <html>
+
+    <!-- HEAD -->
     <head>
         <title>Item Details</title>
+
+        <!-- Bootstrap -->
         <?php require_once 'components/boot.php'?>
+
+        <!-- CSS -->
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -43,12 +50,22 @@ if ($_GET['id']) {
                 height: 70px !important;
             }     
         </style>
+        <!-- /css -->
+
     </head>
+    <!-- /head -->
+
+    <!-- BODY -->
     <body>
         <fieldset>
+
             <legend class='h2'>Item Details <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $picture ?>' alt="<?php echo $title ?>"></legend>
-<!--             <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
- -->                <table class="table">
+
+<!--        <form action="actions/a_update.php"  method="post" enctype="multipart/form-data">
+-->
+
+                <table class="table">
+
                     <tr>
                         <th>Title</th>
                         <td><?php echo $title ?></td>
@@ -105,8 +122,15 @@ if ($_GET['id']) {
                         <td><a href= "index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                         <td></td>
                     </tr>
+
                 </table>
-<!--             </form>
- -->        </fieldset>
+
+<!--         </form>
+-->
+
+        </fieldset>
     </body>
+    <!-- /body -->
+
 </html>
+<!-- /html -->

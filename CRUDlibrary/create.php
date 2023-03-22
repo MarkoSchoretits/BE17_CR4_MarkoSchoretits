@@ -1,10 +1,20 @@
+<!-- Doctype -->
 <!DOCTYPE html>
+
+<!-- HTML -->
 <html lang="en">
+
+    <!-- HEAD -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap -->
         <?php require_once 'components/boot.php'?>
+
         <title>PHP CRUDlibrary  |  Add Item</title>
+
+        <!-- CSS -->
         <style>
             fieldset {
                 margin: auto;
@@ -12,10 +22,16 @@
                 width: 60% ;
             }       
         </style>
+
     </head>
+    <!-- /head -->
+
+    <!-- BODY -->
     <body>
         <fieldset>
+
             <legend class='h2'>Add item</legend>
+
             <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                 <table class='table'>
                     <tr>
@@ -68,6 +84,10 @@
                     </tr>
                 </table>
             </form>
+
         </fieldset>
     </body>
+    <!-- /body -->
+
 </html>
+<!-- /html -->
